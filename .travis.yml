@@ -10,3 +10,4 @@ script:
         - cd $(find . -name "A.*")
         - make
         - make check
+        - make distcheck
