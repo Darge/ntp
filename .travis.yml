@@ -4,7 +4,7 @@ sudo: false
 script:
         - touch COPYRIGHT sntp/scm-rev
         - ./bootstrap
-        - ./build
+        - ./build --enable-local-libevent
         - ls
         - cat $(find . -name "make.log")
         - cd $(find . -name "A.*")
