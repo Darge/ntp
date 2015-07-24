@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Darge/ntp.svg?branch=stable)](https://travis-ci.org/Darge/ntp)
+
 This is my sandbox fork to test using Travis CI with NTP.
 
 The original README:
