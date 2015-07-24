@@ -2,8 +2,8 @@ language: c
 compiler: gcc
 sudo: false
 script:
+        - touch COPYRIGHT
         - ./bootstrap
-        - touch ../COPYRIGHT
         - ./build
         - ls
         - cat $(find . -name "make.log")
