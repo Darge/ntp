@@ -2,7 +2,7 @@ language: c
 compiler: gcc
 sudo: false
 script:
-        - touch COPYRIGHT
+        - touch COPYRIGHT sntp/scm-rev
         - ./bootstrap
         - ./build
         - ls
