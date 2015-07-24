@@ -8,6 +8,7 @@ addons:
         packages:
             - clang-3.6
 script:
+        - export CC=scan-build
         - touch COPYRIGHT sntp/scm-rev
         - ./bootstrap
         - ./build --enable-local-libevent
