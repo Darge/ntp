@@ -8,6 +8,7 @@ addons:
         packages:
             - clang-3.6
         sources:
+            - ubuntu-toolchain-r-test
             - llvm-toolchain-precise-3.6
 script:
         - touch COPYRIGHT sntp/scm-rev
