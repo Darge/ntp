@@ -5,6 +5,8 @@ script:
         - ./bootstrap
         - MAKEFLAGS_SAVED=$MAKEFLAGS
         - MAKEFLAGS="$MAKEFLAGS -j 3"
+        - echo $MAKEFLAGS
+        - echo $MAKEFLAGS_SAVED
         - ./build
         - ls
         - cat $(find . -name "make.log")
