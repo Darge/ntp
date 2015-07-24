@@ -1,7 +1,7 @@
 language: c
 compiler: gcc
 before_install: 
-        -sudo apt-get install lynx
+        -sudo apt-get install -y lynx
 script:
         - ./bootstrap
         - ./build
