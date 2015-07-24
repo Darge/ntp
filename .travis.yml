@@ -1,6 +1,7 @@
 language: c
 compiler: gcc
-script: ./bootstrap
-        ./build
-        ls
-        cat $(find . -name "make.log")
+script:
+- ./bootstrap
+- ./build
+- ls
+- cat $(find . -name "make.log")
