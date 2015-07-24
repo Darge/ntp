@@ -12,6 +12,7 @@ addons:
             - llvm-toolchain-precise-3.6
 script:
         - export CC=clang-3.6
+        - echo $($CC --version)
         - touch COPYRIGHT sntp/scm-rev
         - ./bootstrap
         - ./build --enable-local-libevent
