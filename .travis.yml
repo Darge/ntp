@@ -1,8 +1,9 @@
 language: c
 compiler: gcc
-install: sudo apt-get install lynx
+before_install: 
+        -sudo apt-get install lynx
 script:
-- ./bootstrap
-- ./build
-- ls
-- cat $(find . -name "make.log")
+        - ./bootstrap
+        - ./build
+        - ls
+        - cat $(find . -name "make.log")
