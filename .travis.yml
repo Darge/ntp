@@ -7,3 +7,6 @@ script:
         - ./build
         - ls
         - cat $(find . -name "make.log")
+        - cd $(find . -name "A.*")
+        - make
+        - make check
