@@ -11,4 +11,4 @@ script:
         - make
         - make check
         - make distcheck
-        - ls -a
+        - ls ..
