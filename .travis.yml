@@ -3,6 +3,10 @@ compiler:
         - gcc
         - clang
 sudo: false
+addons:
+    apt:
+        packages:
+            - clang-3.6
 script:
         - touch COPYRIGHT sntp/scm-rev
         - ./bootstrap
