@@ -3,16 +3,12 @@ compiler: gcc
 sudo: false
 script:
         - ./bootstrap
-        - MAKEFLAGS_SAVED=$MAKEFLAGS
-        - MAKEFLAGS="$MAKEFLAGS -j 30000"
-        - echo $MAKEFLAGS
-        - echo $MAKEFLAGS_SAVED
+        - touch ../COPYRIGHT
         - ./build
         - ls
         - cat $(find . -name "make.log")
         - cd $(find . -name "A.*")
-        - make=
-        - make check=
-        - MAKEFLAGS=$MAKEFLAGS_SAVED
+        - make
+        - make check
         - make distcheck
         - ls ..
