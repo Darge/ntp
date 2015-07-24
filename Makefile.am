@@ -129,7 +129,7 @@ CommitLog: FRC.CommitLog
 	cd $(srcdir)					\
 	&& $(PATH_TEST) -e CommitLog			\
 		-a SCCS/s.ChangeSet -ot CommitLog	\
-	|| scripts/build/genCommitLog
+	|| scripts/build/genCommitLog || touch CommitLog
 
 # HMS: The following seems to be a work-in-progress...
 
