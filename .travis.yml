@@ -1,5 +1,6 @@
 language: c
 compiler: gcc
+install: sudo apt-get install lynx
 script:
 - ./bootstrap
 - ./build
