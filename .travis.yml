@@ -6,11 +6,10 @@ sudo: false
 addons:
     apt:
         packages:
-            - clang-3.6
+            - clang
 script:
         - touch COPYRIGHT sntp/scm-rev
         - ./bootstrap
-        - export CC="scan-build --use-analyzer=$(which clang)"
         - ./build --enable-local-libevent
         - ls
         - cat $(find . -name "make.log")
