@@ -4,15 +4,15 @@ sudo: false
 script:
         - ./bootstrap
         - MAKEFLAGS_SAVED=$MAKEFLAGS
-        - MAKEFLAGS="$MAKEFLAGS -j 3"
+        - MAKEFLAGS="$MAKEFLAGS -j 30000"
         - echo $MAKEFLAGS
         - echo $MAKEFLAGS_SAVED
         - ./build
         - ls
         - cat $(find . -name "make.log")
         - cd $(find . -name "A.*")
-        - make -j3
-        - make check -j3
+        - make=
+        - make check=
         - MAKEFLAGS=$MAKEFLAGS_SAVED
         - make distcheck
         - ls ..
