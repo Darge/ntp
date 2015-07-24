@@ -2,7 +2,6 @@ language: c
 compiler: gcc
 before_install: 
         - sudo apt-get install -y lynx
-        - alias bk=echo
 script:
         - ./bootstrap
         - ./build
@@ -12,3 +11,4 @@ script:
         - make
         - make check
         - make distcheck
+        - ls -a
