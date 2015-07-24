@@ -3,11 +3,14 @@ compiler: gcc
 sudo: false
 script:
         - ./bootstrap
+        - MAKEFLAGS_SAVED=$MAKEFLAGS
+        - MAKEFLAGS="$MAKEFLAGS -j 3"
         - ./build
         - ls
         - cat $(find . -name "make.log")
         - cd $(find . -name "A.*")
         - make -j3
         - make check -j3
+        - MAKEFLAGS=$MAKEFLAGS_SAVED
         - make distcheck
         - ls ..
