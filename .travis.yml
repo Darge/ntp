@@ -21,5 +21,3 @@ script:
         - make
         - make check
         - make distcheck
-env:
-        - AUTOKEY=true
