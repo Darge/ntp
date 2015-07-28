@@ -22,11 +22,4 @@ script:
         - make check
         - make distcheck
 env:
-        - STH=true
-        - STH=false
-        - STH2=true
-        - STH2=false
-        - STH3=true
-        - STH4=false
-        - STH5=true
-        - STH5=false
+        - AUTOKEY=true
