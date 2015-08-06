@@ -6,13 +6,12 @@ addons:
     apt:
         packages:
             - clang-3.6
-            - qemu
         sources:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-precise-3.6
 script:
         - wget https://people.debian.org/~aurel32/qemu/mips/debian_wheezy_mips_standard.qcow2
-        - sudo apt-get install qemu -y
+        - sudo apt-get install qemu-system-i386 -y
         - if [ "$CC" = "clang" ]; then export CC=clang-3.6; fi
         - echo $($CC --version)
         - touch COPYRIGHT sntp/scm-rev
