@@ -11,6 +11,7 @@ addons:
             - llvm-toolchain-precise-3.6
 script:
         - wget https://people.debian.org/~aurel32/qemu/powerpc/debian_wheezy_powerpc_standard.qcow2
+        - sudo apt-get update
         - sudo apt-get install qemu-system-ppc -y
         - qemu-system-ppc -hda debian_wheezy_powerpc_standard.qcow2
         - if [ "$CC" = "clang" ]; then export CC=clang-3.6; fi
