@@ -16,7 +16,7 @@ script:
         - sudo apt-get install qemu-system-x86 -y
         - wget ftp://ftp.stacklet.com/archive/x86-64/FreeBSD/9.2/freebsd.9-2.x86-64.20140103.raw.img.txz
         - tar -xvf freebsd.9-2.x86-64.20140103.raw.img.txz
-        - qemu-system-x86_64 -hda freebsd.9-2.x86-64.20140103.raw.img
+        - qemu-system-x86_64 -hda freebsd.9-2.x86-64.20140103.raw.img -net user -net nic -redir tcp:4222:10.0.2.15:22 -nographic
         - if [ "$CC" = "clang" ]; then export CC=clang-3.6; fi
         - echo $($CC --version)
         - touch COPYRIGHT sntp/scm-rev
