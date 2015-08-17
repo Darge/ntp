@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+eval spawn ssh -oStrictHostKeyChecking=no -oCheckHostIP=no -p 4941 root@localhost
+#use correct prompt
+set prompt ":|#|\\\$"
+interact -o -nobuffer -re $prompt return
+send "password\r"
+interact -o -nobuffer -re $prompt return
+send "ls\r"
+interact -o -nobuffer -re $prompt return
+send "ls\r"
+interact
