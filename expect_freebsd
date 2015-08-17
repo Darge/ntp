@@ -4,6 +4,14 @@ set prompt ":|#|\\\$"
 interact -o -nobuffer -re $prompt return
 send "password\r"
 interact -o -nobuffer -re $prompt return
+send "password\r"
+interact -o -nobuffer -re $prompt return
+send "password\r"
+interact -o -nobuffer -re $prompt return
+send "password\r"
+interact -o -nobuffer -re $prompt return
+send "password\r"
+interact -o -nobuffer -re $prompt return
 send "ls\r"
 interact -o -nobuffer -re $prompt return
 send "ls\r"
