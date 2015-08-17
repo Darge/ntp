@@ -19,4 +19,4 @@ script:
         - qemu-system-x86_64 -hda freebsd.9-2.x86-64.20140103.raw.img -net user -net nic -redir tcp:4941:10.0.2.15:22 -display none -daemonize
         - sleep 180
         - chmod a+x expect_freebsd
-        - ./expect_freebsd
+        - expect -f expect_freebsd
