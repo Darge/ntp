@@ -13,8 +13,10 @@ script:
         - wget https://people.debian.org/~aurel32/qemu/powerpc/debian_wheezy_powerpc_standard.qcow2
         - sudo apt-get update
         - sudo apt-get install qemu-system -y
+        - sudo apt-get install sshpass
         - wget ftp://ftp.stacklet.com/archive/x86-64/FreeBSD/9.2/freebsd.9-2.x86-64.20140103.raw.img.txz
         - tar -xvf freebsd.9-2.x86-64.20140103.raw.img.txz
         - qemu-system-x86_64 -hda freebsd.9-2.x86-64.20140103.raw.img -net user -net nic -redir tcp:4941:10.0.2.15:22 -display none -daemonize
         - sleep 180
-        - ssh -oStrictHostKeyChecking=no -oCheckHostIP=no -p 4941 root@localhost
+        - chmod a+x expect_freebsd
+        - ./expect_freebsd
