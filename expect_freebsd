@@ -1,4 +1,3 @@
-#!/usr/bin/expect
 eval spawn ssh -oStrictHostKeyChecking=no -oCheckHostIP=no -p 4941 root@localhost
 #use correct prompt
 set prompt ":|#|\\\$"
