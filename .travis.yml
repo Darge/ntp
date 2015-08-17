@@ -20,3 +20,4 @@ script:
         - sleep 180
         - chmod a+x expect_freebsd
         - expect -f expect_freebsd
+        - exit
