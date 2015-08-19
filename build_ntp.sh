@@ -14,6 +14,7 @@ FreeBSD: {
 
 env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg bootstrap
 env ASSUME_ALWAYS_YES=YES pkg install autotools 
+env ASSUME_ALWAYS_YES=YES pkg install lynx
 ./bootstrap
 ./build --enable-local-libevent
 cat $(find . -name "make.log")
