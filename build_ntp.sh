@@ -4,13 +4,11 @@ touch COPYRIGHT sntp/scm-rev
 mkdir -p /usr/local/etc/pkg/repos
 
 # configuring pkg
-cat << 'EOF' > /usr/local/etc/pkg/repos/FreeBSD.conf 
-FreeBSD: {
+echo 'FreeBSD: {
   url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest",
   mirror_type: "srv",
   enabled: yes,
-}
-'EOF'
+}' > /home/tomek/tmp/costam.txt
 
 env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg bootstrap
 env ASSUME_ALWAYS_YES=YES pkg install autotools 
