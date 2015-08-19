@@ -10,17 +10,17 @@ echo 'FreeBSD: {
   enabled: yes,
 }' > /usr/local/etc/pkg/repos/FreeBSD.conf 
 
-env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg bootstrap
-env ASSUME_ALWAYS_YES=YES pkg install autotools 
-env ASSUME_ALWAYS_YES=YES pkg install lynx
-./bootstrap
+time env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg bootstrap
+time env ASSUME_ALWAYS_YES=YES pkg install autotools 
+time env ASSUME_ALWAYS_YES=YES pkg install lynx
+time ./bootstrap
 #./build --enable-local-libevent
 mkdir A.builddir
 cd A.builddir
-../configure
+time ../configure
 #cat $(find . -name "make.log")
 #cd $(find . -name "A.*")
-make
-make check
-make distcheck
+time make
+time make check
+time make distcheck
 logout
