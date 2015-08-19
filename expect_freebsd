@@ -16,5 +16,5 @@ send "ls\r"
 interact -o -nobuffer -re $prompt return
 send "ls\r"
 interact -o -nobuffer -re $prompt return
-send "exit\r"
+send "exit 1\r"
 interact
