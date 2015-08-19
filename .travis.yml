@@ -20,4 +20,4 @@ script:
         - sleep 180
         - expect -f expect_scp
         - expect -f expect_freebsd
-        - exit
+        - exit 
