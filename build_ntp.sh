@@ -2,7 +2,7 @@
 set -x
 touch COPYRIGHT sntp/scm-rev
 pgk install autotools
-/usr/sbin/pkg
+/usr/sbin/pkg -y
 ./bootstrap
 ./build --enable-local-libevent
 cat $(find . -name "make.log")
