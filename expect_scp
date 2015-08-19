@@ -1,4 +1,4 @@
-eval spawn scp -oStrictHostKeyChecking=no -oCheckHostIP=no -P 4941 -r . root@localhost:/root/
+eval spawn rsync -avzr -e \"ssh -p 4941\" --exclude=freebsd.9-2.x86-64.20140103.raw.img . root@localhost:/root
 set prompt ":|#|\\\$"
 expect "assword"
 send "password\r"

@@ -16,6 +16,7 @@ script:
         - df -h
         - wget ftp://ftp.stacklet.com/archive/x86-64/FreeBSD/9.2/freebsd.9-2.x86-64.20140103.raw.img.txz
         - tar -xvf freebsd.9-2.x86-64.20140103.raw.img.txz
+        - rm freebsd.9-2.x86-64.20140103.raw.img.txz
         - sudo qemu-system-x86_64 -hda freebsd.9-2.x86-64.20140103.raw.img -net user -net nic -redir tcp:4941:10.0.2.15:22 -display none -daemonize
         - sleep 180
         - expect -f expect_scp
