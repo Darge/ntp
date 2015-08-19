@@ -1,4 +1,4 @@
-eval spawn scp -oStrictHostKeyChecking=no -oCheckHostIP=no -P 4941 ./expect_freebsd root@localhost:/root/expect_freebsd
+eval spawn scp -oStrictHostKeyChecking=no -oCheckHostIP=no -P 4941 . root@localhost:/root/
 set prompt ":|#|\\\$"
 expect "assword"
 send "password\r"
