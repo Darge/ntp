@@ -5,6 +5,8 @@ addons:
     apt:
         packages:
             - clang-3.6
+            - qemu-system
+            - expect
         sources:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-precise-3.6
@@ -17,7 +19,7 @@ script:
         - wget ftp://ftp.stacklet.com/archive/x86-64/FreeBSD/9.2/freebsd.9-2.x86-64.20140103.raw.img.txz
         - tar -xvf freebsd.9-2.x86-64.20140103.raw.img.txz
         - rm freebsd.9-2.x86-64.20140103.raw.img.txz
-        - sudo qemu-system-x86_64 -hda freebsd.9-2.x86-64.20140103.raw.img -m 256 -cpu host -net user -net nic -redir tcp:4941:10.0.2.15:22 -display none -daemonize
+        - sudo qemu-system-x86_64 -hda freebsd.9-2.x86-64.20140103.raw.img -m 256 -net user -net nic -redir tcp:4941:10.0.2.15:22 -display none -daemonize
         - sleep 120
         - expect -f expect_scp
         - expect -f expect_freebsd
