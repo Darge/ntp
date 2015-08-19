@@ -8,7 +8,7 @@ echo 'FreeBSD: {
   url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest",
   mirror_type: "srv",
   enabled: yes,
-}' > /home/tomek/tmp/costam.txt
+}' > /usr/local/etc/pkg/repos/FreeBSD.conf 
 
 env ASSUME_ALWAYS_YES=YES /usr/sbin/pkg bootstrap
 env ASSUME_ALWAYS_YES=YES pkg install autotools 
