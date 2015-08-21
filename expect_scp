@@ -1,4 +1,4 @@
-eval spawn rsync -avzr -e \"ssh -p 4941 -oStrictHostKeyChecking=no -oCheckHostIP=no\" --exclude=freebsd.9-2.x86-64.20140103* . root@localhost:/root > /dev/null
+eval spawn rsync -avzrq -e \"ssh -p 4941 -oStrictHostKeyChecking=no -oCheckHostIP=no\" --exclude=freebsd.9-2.x86-64.20140103* . root@localhost:/root
 set prompt ":|#|\\\$"
 expect "assword"
 send "password\r"
