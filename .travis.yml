@@ -20,7 +20,7 @@ script:
         - tar -xvf freebsd.9-2.x86-64.20140103.raw.img.txz
         - rm freebsd.9-2.x86-64.20140103.raw.img.txz
         - wget http://wiki.qemu-project.org/download/qemu-2.4.0.tar.bz2
-        - tar -xvf http://wiki.qemu-project.org/download/qemu-2.4.0.tar.bz2
+        - tar -xvf qemu-2.4.0.tar.bz2
         - cd qemu-2.4.0
         - mkdir builddir
         - cd builddir
