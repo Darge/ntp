@@ -23,4 +23,4 @@ time ../configure
 time make -j3
 time make check -j3
 time make distcheck
-logout
+exit
