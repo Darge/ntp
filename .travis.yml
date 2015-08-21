@@ -7,19 +7,27 @@ addons:
             - clang-3.6
             - qemu-system
             - expect
+            - libglib2.0-dev
+            - libfdt-dev
+            - libpixman-1-dev
+            - zlib1g-dev
         sources:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-precise-3.6
 script:
-        - sudo apt-get update
-        - sudo apt-get install qemu-system -y
-        - sudo apt-get install expect -y
-        - sudo apt-get install kvm -y
         - df -h
         - wget ftp://ftp.stacklet.com/archive/x86-64/FreeBSD/9.2/freebsd.9-2.x86-64.20140103.raw.img.txz
         - tar -xvf freebsd.9-2.x86-64.20140103.raw.img.txz
         - rm freebsd.9-2.x86-64.20140103.raw.img.txz
-        - sudo qemu-system-x86_64 -hda freebsd.9-2.x86-64.20140103.raw.img -m 256 -net user -net nic -redir tcp:4941:10.0.2.15:22 -display none -daemonize
+        - wget http://wiki.qemu-project.org/download/qemu-2.4.0.tar.bz2
+        - tar -xvf http://wiki.qemu-project.org/download/qemu-2.4.0.tar.bz2
+        - cd qemu-2.4.0
+        - mkdir builddir
+        - cd builddir
+        - ../configure --target-list=x86_64-softmmu
+        - make
+        - cd x86_64-softmmu
+        - qemu-system-x86_64 -hda ../../../freebsd.9-2.x86-64.20140103.raw.img -m 256 -net user -net nic -redir tcp:4941:10.0.2.15:22 -display none -daemonize
         - sleep 120
         - expect -f expect_scp
         - expect -f expect_freebsd
