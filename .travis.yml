@@ -23,6 +23,7 @@ script:
         - tar -xf qemu-2.4.0.tar.bz2
         - cd qemu-2.4.0
         - mkdir builddir
+        - sudo ls
         - cd builddir
         - ../configure --target-list=x86_64-softmmu
         - make > /dev/null
