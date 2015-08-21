@@ -25,7 +25,7 @@ script:
         - mkdir builddir
         - cd builddir
         - ../configure --target-list=x86_64-softmmu
-        - make --quiet
+        - make > /dev/null
         - cd x86_64-softmmu
         - ./qemu-system-x86_64 -hda ../../../freebsd.9-2.x86-64.20140103.raw.img -m 256 -net user -net nic -redir tcp:4941:10.0.2.15:22 -display none -daemonize
         - sleep 120
