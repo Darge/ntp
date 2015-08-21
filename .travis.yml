@@ -20,12 +20,12 @@ script:
         - tar -xvf freebsd.9-2.x86-64.20140103.raw.img.txz
         - rm freebsd.9-2.x86-64.20140103.raw.img.txz
         - wget http://wiki.qemu-project.org/download/qemu-2.4.0.tar.bz2
-        - tar -xvf qemu-2.4.0.tar.bz2 > /dev/null
+        - tar -xf qemu-2.4.0.tar.bz2
         - cd qemu-2.4.0
         - mkdir builddir
         - cd builddir
         - ../configure --target-list=x86_64-softmmu
-        - make > /dev/null
+        - make --quiet
         - cd x86_64-softmmu
         - ./qemu-system-x86_64 -hda ../../../freebsd.9-2.x86-64.20140103.raw.img -m 256 -net user -net nic -redir tcp:4941:10.0.2.15:22 -display none -daemonize
         - sleep 120
