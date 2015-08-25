@@ -18,9 +18,5 @@ time ./bootstrap
 mkdir A.builddir
 cd A.builddir
 time ../configure
-#cat $(find . -name "make.log")
-#cd $(find . -name "A.*")
-time make -j3
-time make check -j3
 time make distcheck
 exit
