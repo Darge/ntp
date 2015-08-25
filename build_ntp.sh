@@ -18,5 +18,6 @@ time ./bootstrap
 mkdir A.builddir
 cd A.builddir
 time ../configure
+time make
 time make distcheck
 exit
